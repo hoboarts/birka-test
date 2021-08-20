@@ -1,0 +1,36 @@
+{
+  "name": "birka",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "author": "Simon Orlov",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "crypto-js": "^4.1.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2",
+    "multer": "^1.4.2",
+    "react-google-charts": "^3.0.15",
+    "react-maskinput": "^3.2.0",
+    "react-modal": "^3.14.3",
+    "sha1": "^1.1.1",
+    "socket-io-server": "^1.0.5",
+    "socket.io": "^4.1.3",
+    "socket.io-client": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

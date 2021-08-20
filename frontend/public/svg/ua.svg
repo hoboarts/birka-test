@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0068F3;}
+	.st1{fill:#F3D900;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_2_);}
+</style>
+<g>
+	<path class="st0" d="M40,47H10c-3.9,0-7-3.1-7-7V10c0-3.9,3.1-7,7-7h30c3.9,0,7,3.1,7,7v30C47,43.9,43.9,47,40,47z"/>
+</g>
+<path class="st1" d="M40,47H10c-3.9,0-7-3.1-7-7V25h44v15C47,43.9,43.9,47,40,47z"/>
+<g>
+	
+		<radialGradient id="SVGID_1_" cx="25" cy="25" r="22" gradientTransform="matrix(6.123234e-17 -1 -4 -2.449294e-16 125 50)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+		<stop  offset="0.5168" style="stop-color:#6D2900;stop-opacity:0.3"/>
+		<stop  offset="0.598" style="stop-color:#885434;stop-opacity:0.3336"/>
+		<stop  offset="0.7037" style="stop-color:#A88671;stop-opacity:0.3774"/>
+		<stop  offset="0.8006" style="stop-color:#C1AEA2;stop-opacity:0.4175"/>
+		<stop  offset="0.8854" style="stop-color:#D3CAC5;stop-opacity:0.4526"/>
+		<stop  offset="0.9547" style="stop-color:#DEDCDA;stop-opacity:0.4813"/>
+		<stop  offset="1" style="stop-color:#E2E2E2;stop-opacity:0.5"/>
+	</radialGradient>
+	<path class="st2" d="M40,47H10c-3.9,0-7-3.1-7-7V10c0-3.9,3.1-7,7-7h30c3.9,0,7,3.1,7,7v30C47,43.9,43.9,47,40,47z"/>
+</g>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="24.9646" y1="11.7226" x2="24.9646" y2="4.3623">
+	<stop  offset="1.118836e-07" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.2661" style="stop-color:#F1F1F1;stop-opacity:0.2395"/>
+	<stop  offset="0.6231" style="stop-color:#E6E6E6;stop-opacity:0.5608"/>
+	<stop  offset="1" style="stop-color:#E2E2E2;stop-opacity:0.9"/>
+</linearGradient>
+<path class="st3" d="M11.8,4.4h26.4c3.9,0,7,3.1,7,7v0.4H4.8v-0.4C4.8,7.5,7.9,4.4,11.8,4.4z"/>
+</svg>
