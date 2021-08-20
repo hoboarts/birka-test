@@ -47,7 +47,11 @@ configRouter.get('/rate', expressAsyncHandler(async (req, res) => {
 }));
 
 configRouter.get('/paymer', expressAsyncHandler(async (req, res) => {
-  res.send(process.env.MERCH_ID);
+  const data = {
+    merchId: process.env.MERCH_ID,
+    hostName: process.env.HOST_NAME,
+  }
+  res.send(data);
 }));
 
 configRouter.get('/phones', expressAsyncHandler(async (req, res) => {
