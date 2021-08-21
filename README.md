@@ -1,2 +1,2 @@
-# birka eCommerce
+# birka eCommerce [Client: REACT + REDUX, Server: NODE.JS EXPRESS]
 DEMO https://peaceful-brushlands-57795.herokuapp.com/
