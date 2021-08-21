@@ -1,5 +1,5 @@
 # birka eCommerce [Client: REACT + REDUX, Server: NODE.JS EXPRESS]
-DEMO https://peaceful-brushlands-57795.herokuapp.com/ \
+DEMO https://peaceful-brushlands-57795.herokuapp.com/
 
   HOBO-ART-STUDIO © \
 |  contact:   hoboart@zoho.com  |\
