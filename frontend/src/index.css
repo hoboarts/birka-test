@@ -36,7 +36,7 @@
 
 html {
   font-size: 65.5%;
-  color: rgb(190, 37, 111);
+  color: rgb(87, 67, 77);
   box-sizing: border-box;
 }
 body {
@@ -90,9 +90,10 @@ h2 {
 }
 a {
   text-decoration: none;
+  color: #496949;
 }
 a:hover {
-  color: rgb(244, 96, 133);
+  color: #d37427;
 }
 ul {
   padding: 0;
@@ -290,11 +291,10 @@ input.readonly-discount {
 }
 .discount-underline {
   text-decoration: underline;
-  color: #d4226c;
+  color: #32af3d;
 }
 .discount-underline:hover {
-  text-decoration: underline;
-  color: #5e248d;
+  color: #d37427;
 }
 .notes {
   color: rgb(88, 88, 88);
@@ -612,4 +612,5 @@ input.readonly-discount {
   font-size: 1.2rem;
   margin-left: 2rem;
   margin-right: 0.5rem;
+  color: #20f02a;
 }
