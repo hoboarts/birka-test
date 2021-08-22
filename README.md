@@ -10,7 +10,7 @@ HOBO-ART-STUDIO © \
 
 INSTRUCTION \
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
-that's mean rates loading from DB /OR/ Privat public API (UKRAINE), USD -> UAH = RATE * PRICE. \
+that's mean rates loading from DB /OR/ Privat public API LIVE currency exchange rates (Ukraine), USD -> UAH = RATE * PRICE. \
 All prices of products in DB specified in USD (United States dollar). Prices of total order cost \
 in DB specified in UAH (Ukrainian hryvnia). Changes of currency rate occurs in admin settings screen.
 
@@ -19,7 +19,7 @@ Localisation in russian, ukranian, english. \
 Registration & authentication of users, admin privileges. \
 Ordered product management for users. \
 Product reviews & rating. \
-Customized paybutton of *_NOT_FOR_AD_* bank (Ukraine) visa/master card payment. \
+Customized paybutton of *_NOT_FOR_AD_NAME_* bank (Ukraine) visa/master card payment. \
 Dashboard on Google Chart. \
 Products/Orders/User management in admin settings screen. \
 Orders payment & delivery management in admin settings screen. \
@@ -30,6 +30,8 @@ Product decrement auto/manual switch, after purchase. \
 Chat support admin-to-consumers messaging.
 
 Known issues and planned updates: \
-Infinitely loading of paybutton (press update button in your browser). \
-Adding management for product's image files. \
-Visual appearance of app elaboration.
+- Infinitely loading of paybutton (press update button in your browser). \
+Pending server response of *_NOT_FOR_AD_NAME_* bank (Ukraine). \
+Considered as fixed. \
+- Adding management for product's image files. \
+- Visual appearance of app elaboration.
