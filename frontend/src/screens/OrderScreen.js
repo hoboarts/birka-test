@@ -56,6 +56,15 @@ export default function OrderScreen(props) {
     const orderDeliver = useSelector(state => state.orderDeliver);
     const { loading: loadingDeliver, error: errorDeliver, success: successDeliver } = orderDeliver;
     const dispatch = useDispatch();
+
+    const createPayScript = () => {
+        const script = document.createElement('script');
+        script.src = "https://api.tascombank.com.ua/static_common/v1/checkout/ipsp.js";
+        script.type = "text/javascript";
+        script.async = true;
+        document.body.appendChild(script);
+    }
+
     useEffect(() => {
         let mounted = true;
         currRateLoader().then(res => {
@@ -69,6 +78,9 @@ export default function OrderScreen(props) {
         ) {
             dispatch({ type: ORDER_DELIVER_RESET });
             dispatch(detailsOrder(orderId));
+        }
+        if (order && order.paymentMethod === "ToAccount" && !window.$ipsp) {
+            createPayScript();
         }
         return () => mounted = false;
     }, [dispatch, rate, orderId, order, successDeliver]);

@@ -63,16 +63,8 @@ export default function PayButton(props) {
         const { data } = await Axios.get('/api/configs/paymer');
         setDat(data);
     }
-    const createScript = () => {
-        const script = document.createElement('script');
-        script.src = "https://api.tascombank.com.ua/static_common/v1/checkout/ipsp.js";
-        script.type = "text/javascript";
-        script.async = true;
-        document.body.appendChild(script);
-    }
     useEffect(() => {
         if (!dat) {
-            createScript();
             grabData();
         }
     }, [dat]);
