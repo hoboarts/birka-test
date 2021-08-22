@@ -388,10 +388,12 @@ input.readonly-discount {
 .dropdown:hover .dropdown-content{
   display: block;
 }
+.menuSection {
+  margin-left: auto;
+}
 .phonesSection {
-  display: inline-block;
-  position: relative;
-  margin-right: 2rem;
+  margin-left: auto;
+  padding: 2rem;
   border: 0.1rem solid rgb(250, 137, 194);
   border-radius: 0.3rem;
 }

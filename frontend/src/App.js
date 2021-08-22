@@ -127,17 +127,17 @@ function App() {
               )}
             ></Route>
           </div>
-          <div>
-            <div className="phonesSection">
-              {loadingPhoneNum ? (
-                <LoadingBox></LoadingBox>
-              ) : errorPhoneNum ? (
-                <MessageBox variant="warn">{errorPhoneNum}</MessageBox>
-              ) : (numbers &&
-                numbers.map(phone => (
-                  <p key={numbers.indexOf(phone)} className="phoneNumbers">{phone}</p>
-                )))}
-            </div>
+          <div className="phonesSection">
+            {loadingPhoneNum ? (
+              <LoadingBox></LoadingBox>
+            ) : errorPhoneNum ? (
+              <MessageBox variant="warn">{errorPhoneNum}</MessageBox>
+            ) : (numbers &&
+              numbers.map(phone => (
+                <p key={numbers.indexOf(phone)} className="phoneNumbers">{phone}</p>
+              )))}
+          </div>
+          <div className="menuSection">
             <Link to="/cart">{translate(localisation, 'cart_Name')}
               {cartItems.length > 0 && (
                 <span style={{ backgroundImage: "url(/svg/bag.svg)" }} className="badge">{cartItems.length}</span>
