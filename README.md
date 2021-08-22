@@ -18,7 +18,7 @@ Changes of currency rate occurs in admin settings screen. \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR)
 
 App has support: \
-Localisation in russian, ukranian, english. \
+Localization in russian, ukranian, english languages. \
 Registration & authentication of users, admin privileges. \
 Ordered product management for users. \
 Product reviews & rating. \
