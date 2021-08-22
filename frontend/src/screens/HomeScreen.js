@@ -92,16 +92,16 @@ export default function HomeScreen() {
                 return setRate(res);
             }
         });
-        dispatch(listProducts({}));
         if (!gate) {
             console.log(myAd);
+            dispatch(listProducts({}));
             setGate(true);
         }
         return () => mounted = false;
-    }, [dispatch, rate, gate, myAd]);
+    }, [dispatch, rate, products, gate, myAd]);
     return (
         <div>
-            {loading ? (
+            {loading || rate === 0 ? (
                 <LoadingBox></LoadingBox>
             ) : error ? (
                 <MessageBox variant="warn">{translate(lang, error)}</MessageBox>
