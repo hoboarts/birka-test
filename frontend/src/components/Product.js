@@ -44,11 +44,18 @@ export default function Product(props) {
     return (
         <div key={product._id} className="card">
             <Link to={`/product/${product._id}`}>
-                <img className="medium"
-                    src={product.image[0]}
-                    alt={product.name[lang]}
-                    width="400px"
-                    height="400px" />
+                <div className="container-mark">
+                    {product.discount && product.discount.on &&
+                        <div className="discount-mark">
+                            <i className='fa fa-tag'></i>
+                        </div>
+                    }
+                    <img className="medium"
+                        src={product.image[0]}
+                        alt={product.name[lang]}
+                        width="400px"
+                        height="400px" />
+                </div>
             </Link>
             <div className="card-body">
                 <Link to={`/product/${product._id}`}>
@@ -59,14 +66,14 @@ export default function Product(props) {
                     numReviews={product.numReviews}
                 ></Rating>
                 {rate !== 0 &&
-                <div className="price">
-                    {summDivis((product.priceUSD * rate).toFixed(0))} ₴
-                </div>
+                    <div className="price">
+                        {summDivis((product.priceUSD * rate).toFixed(0))} ₴
+                    </div>
                 }
                 {product.discount && product.discount.on &&
-                <div className="price-discount">
-                    {summDivis((product.discount.withoutDiscountPriceUSD * rate).toFixed(0))} ₴
-                </div>
+                    <div className="price-discount">
+                        {summDivis((product.discount.withoutDiscountPriceUSD * rate).toFixed(0))} ₴
+                    </div>
                 }
             </div>
         </div>
