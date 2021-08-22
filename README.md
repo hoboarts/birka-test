@@ -29,9 +29,9 @@ Uploading up to 3 images for product on server. \
 Product decrement auto/manual switch, after purchase. \
 Chat support admin-to-consumers messaging.
 
-Known issues and planned updates: \
+Known issues and planned updates: 
 - Infinitely loading of paybutton (press update button in your browser). \
 Pending server response of *_NOT_FOR_AD_NAME_* bank (Ukraine). \
-Considered as fixed. \
-- Adding management for product's image files. \
+Considered as fixed.
+- Adding management for product's image files.
 - Visual appearance of app elaboration.
