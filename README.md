@@ -32,4 +32,4 @@ Chat support admin-to-consumers messaging.
 Known issues and planned updates: \
 Infinitely loading of paybutton (press update button in your browser). \
 Adding management for product's image files. \
-Visual appearance of app.
+Visual appearance of app elaboration.
