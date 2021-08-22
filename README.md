@@ -22,6 +22,7 @@ Product reviews & rating. \
 Customized paybutton of *_NOT_FOR_AD_* bank (Ukraine) visa/master card payment. \
 Dashboard on Google Chart. \
 Products/Orders/User management in admin settings screen. \
+Orders payment & delivery management in admin settings screen. \
 Adding up to 3 mobile numbers on header of home screen. \
 Specifying product on discount. \
 Uploading up to 3 images for product on server. \
