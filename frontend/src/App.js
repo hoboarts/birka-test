@@ -116,6 +116,16 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
+          <div className="phonesSection">
+            {loadingPhoneNum ? (
+              <LoadingBox></LoadingBox>
+            ) : errorPhoneNum ? (
+              <MessageBox variant="warn">{errorPhoneNum}</MessageBox>
+            ) : (numbers &&
+              numbers.map(phone => (
+                <div key={numbers.indexOf(phone)} className="phoneNumbers">{phone}</div>
+              )))}
+          </div>
           <div>
             <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}><i className="fa fa-bars"></i></button>
             <Link className="brand" to="/">{translate(localisation, 'logo_Name')} <i className='fa fa-tag'></i></Link>{/* БИРКА */}
@@ -126,16 +136,6 @@ function App() {
                 <SearchBox history={history}></SearchBox>
               )}
             ></Route>
-          </div>
-          <div className="phonesSection">
-            {loadingPhoneNum ? (
-              <LoadingBox></LoadingBox>
-            ) : errorPhoneNum ? (
-              <MessageBox variant="warn">{errorPhoneNum}</MessageBox>
-            ) : (numbers &&
-              numbers.map(phone => (
-                <p key={numbers.indexOf(phone)} className="phoneNumbers">{phone}</p>
-              )))}
           </div>
           <div className="menuSection">
             <Link to="/cart">{translate(localisation, 'cart_Name')}
@@ -263,17 +263,18 @@ function App() {
         </main>
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>{translate(localisation, 'rightsReserv_Name')}</div>
+          <div className="rightsReserved">{translate(localisation, 'rightsReserv_Name')}</div>
+          <div className="hobologo">
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://www.youtube.com/channel/UCJS-Ow6LOZRcrQ7VZ2_V0qA"
-            className="hobologo">
+            href="https://www.youtube.com/channel/UCJS-Ow6LOZRcrQ7VZ2_V0qA">
             <div className="row">
-              <div>CREATED BY</div>
+              <div className="createdBy">CREATED BY</div>
               <div><img src={'/img/hobologo.png'} alt="hobologo" height={40} width={40}></img></div>
             </div>
           </a>
+          </div>
         </footer>
       </div>
     </BrowserRouter>
