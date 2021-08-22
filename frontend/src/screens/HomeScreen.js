@@ -46,22 +46,8 @@ import { translate } from '../localisation';
 export default function HomeScreen() {
     const lang = useSelector(state => state.cart.localisation);
     const [rate, setRate] = useState(0);
-
-    const dispatch = useDispatch();
-    const productList = useSelector(state => state.productList);
-    const { loading, error, products } = productList;
-    useEffect(() => {
-        let mounted = true;
-        currRateLoader().then(res => {
-            if (mounted) {
-                return setRate(res);
-            }
-        });
-        dispatch(listProducts({}));
-        return () => mounted = false;
-    }, [dispatch, rate]);
-    // eslint-disable-next-line
-    console.log("////////////////////////////////////////////////////////////////////////////////////////////////\n\
+    const [myAd] = useState(// eslint-disable-next-line
+        "////////////////////////////////////////////////////////////////////////////////////////////////\n\
 //                      :==+=-.                                                               //\n\
 //      .-+**+:       -@#+--=+%%-                                                             //\n\
 //    =%%+-::=@*      @%       +@-                      :*%%%#=                               //\n\
@@ -94,6 +80,25 @@ export default function HomeScreen() {
 //                                                                                            //\n\
 //                                                                               SIMON ORLOV  //\n\
 ////////////////////////////////////////////////////////////////////////////////////////////////");
+    const [gate, setGate] = useState(false);
+
+    const dispatch = useDispatch();
+    const productList = useSelector(state => state.productList);
+    const { loading, error, products } = productList;
+    useEffect(() => {
+        let mounted = true;
+        currRateLoader().then(res => {
+            if (mounted) {
+                return setRate(res);
+            }
+        });
+        dispatch(listProducts({}));
+        if (!gate) {
+            console.log(myAd);
+            setGate(true);
+        }
+        return () => mounted = false;
+    }, [dispatch, rate, gate, myAd]);
     return (
         <div>
             {loading ? (
