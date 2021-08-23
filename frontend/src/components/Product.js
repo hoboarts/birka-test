@@ -59,7 +59,7 @@ export default function Product(props) {
             </Link>
             <div className="card-body">
                 <Link to={`/product/${product._id}`}>
-                    <h2 className={product.discount && product.discount.on ? "discount-underline" : ""}>{product.name[lang]}</h2>
+                    <h2 className={product.discount && product.discount.on ? "discount-glow" : "common-prod"}>{product.name[lang]}</h2>
                 </Link>
                 <Rating
                     rating={product.rating}

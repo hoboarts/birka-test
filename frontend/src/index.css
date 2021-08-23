@@ -191,11 +191,12 @@ aside {
   height: 100%;
   background-color: #efefef;
   z-index: 1000;
-  transform: translateX(-30rem);
-  transition: all 0.5s;
+  transform: translateX(-100rem) rotate(-1turn);
+  transition: all 0.6s ease-out;
 }
 aside.open {
-  transform: translateX(0);
+  transform: translateX(0) rotate(1turn);
+  box-shadow: 0 2rem 5em #ff2277;
 }
 button.open-sidebar {
   font-size: 3rem;
@@ -264,6 +265,9 @@ input.readonly-discount {
   margin: 1rem;
   box-shadow: 0 1rem 1.8rem rgb(105, 255, 130);
 }
+.card:hover {
+  box-shadow: 0 1rem 1.8rem rgb(255, 148, 105);
+}
 .card-body{
   padding: 1.5rem 1rem;
 }
@@ -285,12 +289,19 @@ input.readonly-discount {
   color: #9b8494;
   font-size: 1.3rem;
 }
-.discount-underline {
-  text-decoration: underline;
-  color: #32af3d;
+.common-prod {
+  color: #49b320;
+  text-shadow: 0 0.2rem 0.1rem #adfa1e;
 }
-.discount-underline:hover {
-  color: #d37427;
+.common-prod:hover {
+  color: #137949;
+}
+.discount-glow {
+  color: #f38546;
+  text-shadow: 0 0.1rem 0.1rem #f02020;
+}
+.discount-glow:hover {
+  color: #e6205b;
 }
 .notes {
   color: rgb(88, 88, 88);
