@@ -38,4 +38,4 @@ Pending server response of *_NOT_FOR_AD_NAME_* bank (Ukraine). \
 Considered as fixed.
 - Adding management for product's image files.
 - Visual appearance of app elaboration.
-- NODE_ENV: production. \
+- NODE_ENV: production.
