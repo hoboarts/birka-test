@@ -41,6 +41,10 @@ import { isAdmin, isAuth } from '../utils.js';
 
 const configRouter = express.Router();
 
+configRouter.get('/getenv', expressAsyncHandler(async (req, res) => {
+  res.send(process.env.NODE_ENV);
+}));
+
 configRouter.get('/rate', expressAsyncHandler(async (req, res) => {
   const rate = await Config.find({ type: 'currencyRate' });
   res.send(rate);

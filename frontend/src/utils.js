@@ -36,6 +36,15 @@
 
 import Axios from 'axios';
 
+/* export const nodeEnv = async () => {
+  let a
+  await Axios.get('/api/configs/getenv')
+  .then(res => {a = res.data })
+  .catch(err => { console.error(err); return Promise.reject(err)})
+  return a;
+}; */
+export const nodeEnv = 'production';
+
 export const flagSet = flag => {
   switch (flag) {
     case 'RU':

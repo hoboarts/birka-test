@@ -41,7 +41,7 @@ import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetai
 import { productCategoryListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
 import { phoneNumbersReducer, settingDetailsReducer, settingUpdateReducer } from './reducers/settingReducers';
 import { userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
-
+import { nodeEnv } from './utils';
 
 const initialState = {
     userSignin: {
@@ -83,7 +83,11 @@ const reducer = combineReducers({
     settingUpdate: settingUpdateReducer,
     phoneNumbers: phoneNumbersReducer,
 });
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer =
+    (nodeEnv !== 'production' &&
+        typeof window !== 'undefined' &&
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
 const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)));
 
 export default store;
