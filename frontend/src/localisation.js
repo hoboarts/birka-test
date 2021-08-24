@@ -133,7 +133,7 @@ const dict = {
     toAccount_Name: ['Безналичный, картой', 'Безготівковий, картою', 'Cashless payment by card'],
     orderItems_Name: ['Товар в заказе', 'Товар в замовленні', 'Order items'],
     orderSummary_Name: ['Итого', 'Разом', 'Order summary'],
-    orderID_Name: ['Заказ № ', 'Замовлення № ', 'Order ID : '],
+    orderID_Name: ['Заказ № ', 'Замовлення № ', 'Order '],
     id_Name: ['№', '№', 'ID'],
     idCode_Name: ['Код', 'Код', 'ID'],
     date_Name: ['Дата', 'Дата', 'Date'],

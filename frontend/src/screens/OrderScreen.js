@@ -94,8 +94,8 @@ export default function OrderScreen(props) {
         error ? (<MessageBox variant="warn">{translate(lang, error)}</MessageBox>)
             :
             (
-                <div className="side-pad">
-                    <h1>{translate(lang, 'orderID_Name')}{order.shopOrderId}</h1>
+                <div>
+                    <div className="order"><h1>{translate(lang, 'orderID_Name')}{order.shopOrderId}</h1></div>
                     <div className="row top">
                         <div className="col-2">
                             <ul>

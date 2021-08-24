@@ -82,7 +82,7 @@ export default function ShippingAddressScreen(props) {
     return (
         <div>
             <CheckoutSteps step1 step2></CheckoutSteps>
-            <form className="form" onSubmit={submitHandler}>
+            <form className="form ship" onSubmit={submitHandler}>
                 <div>
                     <h1>{translate(lang, 'shippingAddress_Name')}</h1>
                 </div>

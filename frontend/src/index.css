@@ -36,7 +36,7 @@
 
 html {
   font-size: 65.5%;
-  color: rgb(87, 67, 77);
+  color: rgb(250, 20, 135);
   box-sizing: border-box;
 }
 body {
@@ -66,6 +66,9 @@ body {
 header {
   grid-area: "header";
   background-color: rgb(126, 115, 115);
+  background-image: radial-gradient(farthest-side at 0% 100%,
+  rgb(223, 155, 194),
+  rgb(146, 146, 146));
   box-shadow: 0 0.5rem 1rem rgb(38, 233, 119);
 }
 main {
@@ -75,8 +78,10 @@ main {
 footer {
   grid-area: "footer";
   background-color: rgb(126, 115, 115);
+  background-image: radial-gradient(farthest-side at 0% 100%,
+  rgb(223, 155, 194),
+  rgb(146, 146, 146));
   box-shadow: 0 -0.5rem 1rem rgb(38, 233, 119);
-  color: rgb(250, 137, 194);
 }
 
 /* common */
@@ -134,7 +139,11 @@ button.small {
 
 /* header*/
 header a {
-  color: rgb(250, 137, 194);
+  color: rgb(255, 179, 217);
+  text-shadow: 
+  0 -0.1rem 0.2rem #ff0379,
+  0 0.1rem 0.2rem #ff0379,
+  0 0.2rem 0.3rem #b0ffc4;
   padding: 1rem;
 }
 a.brand {
@@ -174,8 +183,8 @@ a.brand {
 .min-30 {
   min-width: 30rem;
 }
-.side-pad {
-  padding: 0 12rem 0;
+.order {
+  text-align: center;
 }
 .deletePhone {
   color: seagreen;
@@ -364,7 +373,12 @@ input.readonly-discount {
 /* form */
 .form {
   max-width: 60rem;
-  margin: 0 auto;
+  margin: 1rem auto;
+  background-color: rgb(255, 249, 246);
+  border-radius: 0.5rem;
+}
+.form.ship {
+  height: 76rem;
 }
 .form > div {
   display: flex;
@@ -387,7 +401,7 @@ input.readonly-discount {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: rgb(126, 115, 115);
+  background-color: rgb(155, 148, 148);
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
@@ -397,6 +411,8 @@ input.readonly-discount {
 }
 .menuSection {
   margin-left: auto;
+  font-size: 1.2rem;
+  padding: 1rem 0;
 }
 .phonesSection {
   width: 100%;
@@ -466,25 +482,19 @@ input.readonly-discount {
 
 /* tab history */
 .table-backplate {
-  margin: 2rem 15rem;
-  border-radius: 1rem;
-  border: 0.1rem solid rosybrown;
   text-align: center;
-  background-color: rgb(218, 217, 191);
-}
-.table-topplate {
-  margin-bottom: 3rem;
+  background-color: rgb(255, 245, 234);
+  border-radius: 0.2rem;
 }
 .table {
   width: 100%;
   border-collapse: collapse;
 }
 .table tbody tr:nth-of-type(odd) {
-  background-color: rgb(184, 212, 186);
+  background-color: rgb(208, 236, 210);
 }
 .table td, .table th {
-  text-align: left;
-  border: 0.1rem solid rosybrown;
+  text-align: center;
   padding: 0.5rem;
 }
 .table button {
@@ -664,7 +674,8 @@ input.readonly-discount {
 
 /* hobo */
 .rightsReserved {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #332828;
   margin: 1.5rem;
 }
 .hobologo {

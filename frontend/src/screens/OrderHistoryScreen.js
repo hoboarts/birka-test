@@ -52,7 +52,6 @@ export default function OrderHistoryScreen(props) {
     }, [dispatch]);
     return (
         <div className="table-backplate">
-            <div className="table-topplate">
                 <h1>{translate(lang, 'orderHistory_Name')}</h1>
                 {loading ? <LoadingBox></LoadingBox> :
                     error ? <MessageBox variant="warn">{translate(lang, error)}</MessageBox>
@@ -87,7 +86,6 @@ export default function OrderHistoryScreen(props) {
                             </table>
                         )
                 }
-            </div>
         </div>
     )
 }
