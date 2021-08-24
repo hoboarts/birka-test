@@ -119,7 +119,7 @@ const dict = {
     shippingTariffs_Name: ['По тарифам курьерской службы', `По тарифам кур'єрської служби`, 'At the rates of the delivery service'],
     payment_Name: ['Оплата', 'Оплата', 'Payment'],
     paymentMethod_Name: ['Способ оплаты', 'Спосіб оплати', 'Payment method'],
-    confirmationOrder_Name: ['Подтверждение заказа', 'Підтвердження замовлення', 'Place order'],
+    confirmationOrder_Name: ['Заказ', 'Замовлення', 'Place order'],
     placeOrder_Name: ['Оформить заказ', 'Оформити замовлення', 'Place order'],
     phoneNumber_Name: ['Номер телефона', 'Номер телефону', 'Phone number'],
     postOfficeId_Name: ['Номер почтового отделения', 'Номер поштового відділення', 'Post office ID'],

@@ -47,7 +47,7 @@ export default function ShippingAddressScreen(props) {
     const { userInfo } = userSignin;
     const cart = useSelector(state => state.cart);
     const { shippingAddress } = cart;
-    
+
     if (!userInfo) {
         props.history.push('/signin');
     }
@@ -57,15 +57,15 @@ export default function ShippingAddressScreen(props) {
     const [address, setAddress] = useState('');
     const [postOfficeId, setPostOfficeId] = useState('');
     const [city, setCity] = useState('');
-    
+
     const dispatch = useDispatch();
     useEffect(() => {
         if (shippingAddress.firstName &&
-        shippingAddress.lastName &&
-        shippingAddress.phoneNum &&
-        shippingAddress.address &&
-        shippingAddress.postOfficeId &&
-        shippingAddress.city) {
+            shippingAddress.lastName &&
+            shippingAddress.phoneNum &&
+            shippingAddress.address &&
+            shippingAddress.postOfficeId &&
+            shippingAddress.city) {
             setFirstName(shippingAddress.firstName);
             setLastName(shippingAddress.lastName);
             setPhoneNum(shippingAddress.phoneNum);
@@ -86,29 +86,27 @@ export default function ShippingAddressScreen(props) {
                 <div>
                     <h1>{translate(lang, 'shippingAddress_Name')}</h1>
                 </div>
-                <div className="flex">
-                    <div>
-                        <label htmlFor="firstName">{translate(lang, 'firstName_Name')}</label>
-                        <input
-                            type="text"
-                            id="firstName"
-                            placeholder={translate(lang, 'enterFirstName_Name')}
-                            value={firstName}
-                            onChange={e => setFirstName(e.target.value)}
-                            required
-                        ></input>
-                    </div>
-                    <div>
-                        <label htmlFor="lastName">{translate(lang, 'lastName_Name')}</label>
-                        <input
-                            type="text"
-                            id="lastName"
-                            placeholder={translate(lang, 'enterLastName_Name')}
-                            value={lastName}
-                            onChange={e => setLastName(e.target.value)}
-                            required
-                        ></input>
-                    </div>
+                <div>
+                    <label htmlFor="firstName">{translate(lang, 'firstName_Name')}</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        placeholder={translate(lang, 'enterFirstName_Name')}
+                        value={firstName}
+                        onChange={e => setFirstName(e.target.value)}
+                        required
+                    ></input>
+                </div>
+                <div>
+                    <label htmlFor="lastName">{translate(lang, 'lastName_Name')}</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        placeholder={translate(lang, 'enterLastName_Name')}
+                        value={lastName}
+                        onChange={e => setLastName(e.target.value)}
+                        required
+                    ></input>
                 </div>
                 <div>
                     <label htmlFor="phoneNum">{translate(lang, 'phoneNumber_Name')}</label>
