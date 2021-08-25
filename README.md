@@ -17,10 +17,10 @@ Changes of currency rate occurs in admin settings screen. \
 ! Beware the changing of products/orders/users ID's counter. \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 
-Payment working now in test mode.
-Test payment card:
-4444 5555 6666 1111
-exp.date: any 
+Payment working now in test mode. \
+Test payment card: \
+4444 5555 6666 1111 \
+exp.date: any \
 secret code: any
 
 App has support: \
