@@ -52,4 +52,4 @@ Known issues and planned updates:
 - Infinitely loading of paybutton (press update button in your browser). \
 Pending server response of *_NOT_FOR_AD_NAME_* bank (Ukraine). 
 - Adding management for product's image files.
-- Visual appearance of app elaboration.
+- Landing page, elaboration of visual appearance of the app.
