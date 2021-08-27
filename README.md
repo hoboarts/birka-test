@@ -50,6 +50,6 @@ Chat support admin-to-consumers messaging.
 
 Known issues and planned updates:
 - Infinitely loading of paybutton (press update button in your browser). \
-Pending response from old PHP server of *_NOT_FOR_AD_NAME_* bank (Ukraine).
+Pending script loading from old PHP server of *_NOT_FOR_AD_NAME_* bank (Ukraine).
 - Adding file management for image files in uploads folder.
 - Landing page, elaboration of visual appearance of the app.
