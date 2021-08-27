@@ -17,6 +17,16 @@ Changes of currency rate occurs in admin settings screen. \
 ! Beware the changing of products/orders/users ID's counter. \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 
+Test user: \
+email: testuser@example.com \
+password: test01
+
+Test admin: \
+email: testadmin@example.com \
+password: test01
+
+You can easily register new account, now it work without any confirmation email or captcha.
+
 Payment working now in test mode. \
 Test payment card: \
 4444 5555 6666 1111 \
