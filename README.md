@@ -51,5 +51,5 @@ Chat support admin-to-consumers messaging.
 Known issues and planned updates:
 - Infinitely loading of paybutton (press update button in your browser). \
 Pending server response of *_NOT_FOR_AD_NAME_* bank (Ukraine). 
-- Adding management for product's image files.
+- Adding file management for image files in uploads folder.
 - Landing page, elaboration of visual appearance of the app.
