@@ -42,9 +42,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { currRateLoader } from '../utils';
 import { translate } from '../localisation';
+import { Link, useParams } from 'react-router-dom';
 
 export default function HomeScreen() {
     const lang = useSelector(state => state.cart.localisation);
+    const { pageNumber = 1 } = useParams();
     const [rate, setRate] = useState(0);
     const [myAd] = useState(// eslint-disable-next-line
         "////////////////////////////////////////////////////////////////////////////////////////////////\n\
@@ -84,7 +86,12 @@ export default function HomeScreen() {
 
     const dispatch = useDispatch();
     const productList = useSelector(state => state.productList);
-    const { loading, error, products } = productList;
+    const { loading, error, products, page, pages } = productList;
+
+    const openGate = () => {
+        setGate(false);
+    }
+
     useEffect(() => {
         let mounted = true;
         currRateLoader().then(res => {
@@ -94,11 +101,11 @@ export default function HomeScreen() {
         });
         if (!gate) {
             console.log(myAd);
-            dispatch(listProducts({}));
+            dispatch(listProducts({ pageNumber }));
             setGate(true);
         }
         return () => mounted = false;
-    }, [dispatch, rate, products, gate, myAd]);
+    }, [dispatch, rate, products, gate, myAd, pageNumber]);
     return (
         <div>
             {loading || rate === 0 ? (
@@ -106,11 +113,25 @@ export default function HomeScreen() {
             ) : error ? (
                 <MessageBox variant="warn">{translate(lang, error)}</MessageBox>
             ) : (
-                <div className="row center">
-                    {products.map(product => (
-                        <Product key={product._id} product={product} rate={rate} lang={lang}></Product>
-                    ))}
-                </div>
+                <>
+                    <div className="row center">
+                        {products.map(product => (
+                            <Product key={product._id} product={product} rate={rate} lang={lang}></Product>
+                        ))}
+                    </div>
+                    <div className="row center pagination">
+                        {[...Array(pages).keys()].map(x => (
+                            <Link
+                                className={x + 1 === page ? 'active' : ''}
+                                key={x + 1}
+                                to={`/page/${x + 1}`}
+                                onClick={openGate}
+                            >
+                                {x + 1}
+                            </Link>
+                        ))}
+                    </div>
+                </>
             )}
         </div>
     );

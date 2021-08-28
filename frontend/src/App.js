@@ -251,7 +251,7 @@ function App() {
           <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute>
 
           <AdminRoute path="/productlist" component={ProductListScreen} exact></AdminRoute>
-          <AdminRoute path="/productlist/pageNumber/:pageNumber" component={ProductListScreen} exact></AdminRoute>
+          <AdminRoute path="/productlist/page/:pageNumber" component={ProductListScreen} exact></AdminRoute>
           <AdminRoute path="/orderlist" component={OrderListScreen} exact></AdminRoute>
           <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
           <AdminRoute path="/user/:id/edit" component={UserEditScreen}></AdminRoute>
@@ -260,6 +260,7 @@ function App() {
           <AdminRoute path="/setting" component={SettingScreen}></AdminRoute>
 
           <Route path="/" component={HomeScreen} exact></Route>
+          <Route path="/page/:pageNumber" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}

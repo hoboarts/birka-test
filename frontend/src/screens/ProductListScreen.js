@@ -161,7 +161,7 @@ export default function ProductListScreen(props) {
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
-                to={`/productlist/pageNumber/${x + 1}`}
+                to={`/productlist/page/${x + 1}`}
               >
                 {x + 1}
               </Link>
