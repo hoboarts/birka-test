@@ -271,16 +271,20 @@ export default function SettingScreen(props) {
                         {addNumberError && (
                             <MessageBox variant="warn">{translate(lang, 'exceededPhoneErr_Name')}</MessageBox>
                         )}
-                        <ReactModal
-                            isOpen={showModal}
-                            className="modal"
-                            overlayClassName="overlay">
-                            <div>
-                                <p>{translate(lang, 'sureToDeleteNumber_Name')} {targetNumber} ?</p>
-                                <button type="button" onClick={() => handleCleanPhone(targetNumber)}>{translate(lang, 'yes_Name')}</button>
-                                <button type="button" onClick={() => setShowModal(!showModal)}>{translate(lang, 'no_Name')}</button>
-                            </div>
-                        </ReactModal>
+                        <div>
+                            <ReactModal
+                                isOpen={showModal}
+                                className="modal"
+                                overlayClassName="overlay">
+                                <div className="center">
+                                    <div>
+                                        <p>{translate(lang, 'sureToDeleteNumber_Name')} {targetNumber} ?</p>
+                                        <button type="button" onClick={() => handleCleanPhone(targetNumber)}>{translate(lang, 'yes_Name')}</button>
+                                        <button type="button" onClick={() => setShowModal(!showModal)}>{translate(lang, 'no_Name')}</button>
+                                    </div>
+                                </div>
+                            </ReactModal>
+                        </div>
                         <div>
                             <label htmlFor="keyPass">Key-Pass</label>
                             <input

@@ -648,14 +648,12 @@ input.readonly-discount {
 /* modal */
 .modal {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 28rem;
-  left: 35rem;
-  right: 35rem;
-  bottom: 28rem;
+  top: 39.5%;
+  left: 10%;
+  right: 10%;
+  bottom: 39.5%;
   background-color: rgb(238, 238, 238);
+  border-radius: 0.6rem;
   border: unset;
 }
 .overlay {
@@ -668,8 +666,13 @@ input.readonly-discount {
 }
 .modal button {
   position: relative;
-  left: 20%;
-  margin: 0 4rem;
+  left: 30%;
+  margin: 0 3%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* hobo */
