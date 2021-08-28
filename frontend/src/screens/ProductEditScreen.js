@@ -327,7 +327,7 @@ export default function ProductEditScreen(props) {
                             ></input>
                         </div>
                         <div>
-                            <label htmlFor="imageFile">{translate(lang, "image_Name")} (FILE)</label>
+                            <label htmlFor="imageFile">{translate(lang, "addImage_Name")} (FILE)</label>
                             <input
                                 id="imageFile"
                                 type="file"
