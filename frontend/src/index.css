@@ -653,6 +653,7 @@ input.readonly-discount {
   right: 10%;
   bottom: 39.5%;
   background-color: rgb(238, 238, 238);
+  border-radius: 0.6rem;
   border: unset;
 }
 .overlay {
