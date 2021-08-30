@@ -13,9 +13,13 @@ ECommerce app targeted on ukrainian market. All prices in app uses the rate curr
 that's mean rates loading from DB /OR/ Privat public API LIVE currency exchange rates (Ukraine), \
 USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United States dollar). \
 Prices of total order cost in DB specified in UAH (Ukrainian hryvnia). \
-Changes of currency rate occurs in admin settings screen. \
-! Beware the changing of products/orders/users ID's counter. \
+Changes of currency rate occurs in admin settings screen.
+
+!Beware the changing of products/orders/users ID's counter! \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
+
+Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased \ 
+automatically at the end of the day or even earlier.
 
 Test user: \
 email: testuser@example.com \
@@ -51,5 +55,5 @@ Chat support admin-to-consumers messaging.
 Known issues and planned updates:
 - Infinitely loading of paybutton (press update button in your browser). \
 Pending script loading from old PHP server of *_NOT_FOR_AD_NAME_* bank (Ukraine).
-- Adding file management for image files in uploads folder.
+- Adding file management for image files with storage on AWS S3.
 - Landing page, elaboration of visual appearance of the app.
