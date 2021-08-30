@@ -10,15 +10,15 @@ HOBO-ART-STUDIO © \
 
 INSTRUCTION \
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
-that's mean rates loading from DB /OR/ Privat public API LIVE currency exchange rates (Ukraine), \
+that's mean rates loading from DB or public API LIVE currency exchange rates (Ukraine), \
 USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United States dollar). \
 Prices of total order cost in DB specified in UAH (Ukrainian hryvnia). \
 Changes of currency rate occurs in admin settings screen.
 
-!Beware the changing of products/orders/users ID's counter! \
+!Beware the changing of products|orders|users ID's counter! \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 
-Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased \ 
+Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased
 automatically at the end of the day or even earlier.
 
 Test user: \
