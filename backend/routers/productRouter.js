@@ -46,7 +46,7 @@ const productRouter = express.Router();
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
-    const pageSize = 9;
+    const pageSize = 10;
     const page = Number(req.query.pageNumber) || 1;
     const name = req.query.name || '';
     const category = req.query.category || '';
@@ -121,7 +121,7 @@ productRouter.get(
 
 productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
-  if (Product) {
+  if (product) {
     res.send(product);
   } else {
     res.status(404).send({ message: 2001 });
