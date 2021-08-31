@@ -245,6 +245,8 @@ img.medium {
   width: 100%;
 }
 img.large {
+  max-width: 40rem;
+  max-height: 45rem;
   width: 100%;
 }
 div.icon-frame {
