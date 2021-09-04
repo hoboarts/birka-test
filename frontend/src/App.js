@@ -127,7 +127,7 @@ function App() {
               )))}
           </div>
           <div>
-            <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}><i className="fa fa-bars"></i></button>
+            <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)} title="open sidebar button"><i className="fa fa-bars"></i></button>
             <Link className="brand" to="/">{translate(localisation, 'logo_Name')} <i className='fa fa-tag'></i></Link>{/* БИРКА */}
           </div>
           <div>
@@ -207,12 +207,13 @@ function App() {
                 onClick={() => setSidebarIsOpen(false)}
                 className="close-sidebar"
                 type="button"
+                title="close sidebar button"
               >
                 <i className="fa fa-close"></i>
               </button>
             </li>
             {loadingCategories ? (
-              <LoadingBox></LoadingBox>
+              <li><LoadingBox></LoadingBox></li>
             ) : errorCategories ? (
               <MessageBox variant="warn">{errorCategories}</MessageBox>
             ) : (

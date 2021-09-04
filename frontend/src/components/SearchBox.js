@@ -47,11 +47,13 @@ export default function SearchBox(props) {
       <div className="row">
         <input
           type="text"
-          name="q"
-          id="q"
+          name="search_form"
+          id="search_form"
           onChange={e => setName(e.target.value)}
+          title="search form"
+          placeholder=""
         ></input>
-        <button className="primary" type="submit">
+        <button className="primary" type="submit" title="search button">
           <i className="fa fa-search"></i>
         </button>
       </div>
