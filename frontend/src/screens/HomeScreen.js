@@ -48,49 +48,10 @@ export default function HomeScreen() {
     const lang = useSelector(state => state.cart.localisation);
     const { pageNumber = 1 } = useParams();
     const [rate, setRate] = useState(0);
-    const [myAd] = useState(// eslint-disable-next-line
-        "////////////////////////////////////////////////////////////////////////////////////////////////\n\
-//                      :==+=-.                                                               //\n\
-//      .-+**+:       -@#+--=+%%-                                                             //\n\
-//    =%%+-::=@*      @%       +@-                      :*%%%#=                               //\n\
-//   *@-      :@*     %@.       @%                     *@=   +@=                              //\n\
-//   @#        +@:    *@:       *@.                   %%.   -@@:                              //\n\
-//  .@+         %%+=+#@=        =@-                  %@.   +@@:                               //\n\
-//  :@+          :-=-.          -@=                 +@-   #@%.                                //\n\
-//  :@+                         :@=                .@#   *@#                                  //\n\
-//  :@+                         :@+                +@:   @@                                   //\n\
-//  .@*                         :@+                %%    @%                                   //\n\
-//  .@*          .=*###+.       :@+  .=*%%%%%*=.  .@*    =@+:=#%%%#+:        :=*###*+:        //\n\
-//   @%         +@@@%%@@@:      :@+.*@*:     :+@#::@+     :+*+:   .=%%-    =@%=:. .:=#@+.     //\n\
-//   %@.       :@@:    +@-      :@#@#.          *@*@=                =@* .%%:         .#@-    //\n\
-//   *@:       :@+     %%       -@@%      =%@%+  +@@*          .*%#+  -@=%%      :*##-  *@:   //\n\
-//   =@=        @#    +@:       -@@=      @@@@@  .@@%          *@%%@=  @@@=      @@@@@  .@#   //\n\
-//   -@+        #@    @#        +@@+      .+*+.  =@@@-         .+##+  :@@@+      :*%#-  :@@   //\n\
-//   .@*        -@-  :@+        #@@@:           :@@*@@.              -@@-%@.           .%@*   //\n\
-//    @@.       .@+  :@%.      .@@:@@+.       .*@@* =@@=           -#@@- :@@-         =@@%    //\n\
-//    +@@*-     +@+   *@@*-.  :%@+ :%@@#+===*%@@%-   -%@%+-:::-=+#@@%+    :%@@+-:::=*@@@+     //\n\
-//     -%@@@@%%@@@:    =%@@@@@@@*    :*@@@@@@@*-       -#@@@@@@@@#+:        -#@@@@@@@%=.      //\n\
-//       .=*###*=.       .-+++=:        .::.              ..::.                .---:          //\n\
-//                                                                                            //\n\
-//_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-//\n\
-//                                                                                            //\n\
-//                                                                                            //\n\
-//                               contact:   hoboart@zoho.com                                  //\n\
-//                           itch.io:   https://hoboart.itch.io                               //\n\
-//              youtube:   https://www.youtube.com/channel/UCJS-Ow6LOZRcrQ7VZ2_V0qA           //\n\
-//                        art:   https://www.artstation.com/hidey0shi                         //\n\
-//                                                                                            //\n\
-//                                                                               SIMON ORLOV  //\n\
-////////////////////////////////////////////////////////////////////////////////////////////////");
-    const [gate, setGate] = useState(false);
 
     const dispatch = useDispatch();
     const productList = useSelector(state => state.productList);
     const { loading, error, products, page, pages } = productList;
-
-    const openGate = () => {
-        setGate(false);
-    }
 
     useEffect(() => {
         let mounted = true;
@@ -99,13 +60,9 @@ export default function HomeScreen() {
                 return setRate(res);
             }
         });
-        if (!gate) {
-            console.log(myAd);
-            dispatch(listProducts({ pageNumber }));
-            setGate(true);
-        }
+        dispatch(listProducts({ pageNumber }));
         return () => mounted = false;
-    }, [dispatch, rate, products, gate, myAd, pageNumber]);
+    }, [dispatch, pageNumber]);
     return (
         <div>
             {loading || rate === 0 ? (
@@ -125,7 +82,6 @@ export default function HomeScreen() {
                                 className={x + 1 === page ? 'active' : ''}
                                 key={x + 1}
                                 to={`/page/${x + 1}`}
-                                onClick={openGate}
                             >
                                 {x + 1}
                             </Link>
