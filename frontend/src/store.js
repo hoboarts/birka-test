@@ -41,7 +41,6 @@ import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetai
 import { productCategoryListReducer, productCreateReducer, productDeleteReducer, productDetailsReducer, productListReducer, productReviewCreateReducer, productUpdateReducer } from './reducers/productReducers';
 import { phoneNumbersReducer, settingDetailsReducer, settingUpdateReducer } from './reducers/settingReducers';
 import { userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
-import { nodeEnv } from './utils';
 
 const initialState = {
     userSignin: {
@@ -84,7 +83,7 @@ const reducer = combineReducers({
     phoneNumbers: phoneNumbersReducer,
 });
 const composeEnhancer =
-    (nodeEnv !== 'production' &&
+    (process.env.NODE_ENV !== 'production' &&
         typeof window !== 'undefined' &&
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
