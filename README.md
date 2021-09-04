@@ -15,7 +15,7 @@ USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United
 Prices of total order cost in DB specified in UAH (Ukrainian hryvnia). \
 Changes of currency rate occurs in admin settings screen.
 
-!Beware the changing of products|orders|users ID's counter! \
+!Beware the changing of products|orders|users ID's counterr! \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 
 Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased
