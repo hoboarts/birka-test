@@ -159,7 +159,7 @@ productRouter.post(
       },
     });
     const createdProduct = await product.save();
-    counter[0].value += 1;
+    counter[0].value ++;
     await counter[0].save();
     res.send({ message: 2002, product: createdProduct });
   })

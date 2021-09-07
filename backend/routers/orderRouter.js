@@ -128,7 +128,7 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async (req, res) => {
             user: req.user._id,
         });
         const createdOrder = await order.save();
-        count[0].value += 1;
+        count[0].value ++;
         await count[0].save();
         if (itemDecrementer[0].useIt) {
             order.orderItems.map(async item => {
@@ -137,7 +137,7 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async (req, res) => {
                 await opItem.save();
             });
         };
-        res.status(201).send({ message: 3002, order: createdOrder });
+        res.status(201).set('Cache-Control', 'public, max-age=1').send({ message: 3002, order: createdOrder });
     }
 }));
 
