@@ -50,7 +50,7 @@ import helmet from 'helmet';
 dotenv.config();// json token secret
 const app = express();
 
-app.use(helmet());//safety?
+app.use(helmet.hidePoweredBy());//safety
 
 app.use(express.json());// parse post req for remove "" from obj and no error email
 app.use(express.urlencoded({ extended: true }));

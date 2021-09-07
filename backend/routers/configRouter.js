@@ -36,10 +36,12 @@
 
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
+import helmet from 'helmet';
 import Config from '../models/configModel.js';
 import { isAdmin, isAuth } from '../utils.js';
 
 const configRouter = express.Router();
+configRouter.use(helmet.noSniff());
 
 configRouter.get('/rate', expressAsyncHandler(async (req, res) => {
   const rate = await Config.find({ type: 'currencyRate' });
