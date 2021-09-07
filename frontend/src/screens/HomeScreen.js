@@ -75,9 +75,10 @@ export default function HomeScreen() {
                         {products.map(product => (
                             <Product key={product._id} product={product} rate={rate} lang={lang}></Product>
                         ))}
+                        <div id="sra"></div>
                     </div>
                     <div className="row center pagination">
-                        {[...Array(pages).keys()].map(x => (
+                        {/*pages > 1 && [...Array(pages).keys()].map(x => (
                             <Link
                                 className={x + 1 === page ? 'active' : ''}
                                 key={x + 1}
@@ -85,7 +86,26 @@ export default function HomeScreen() {
                             >
                                 {x + 1}
                             </Link>
-                        ))}
+                        ))*/}
+                        {pages > 1 && page > 1 &&
+                            <Link
+                                title="back_link"
+                                key="back"
+                                to={`/page/${page - 1}`}
+                            >
+                                <i className="fa fa-arrow-left" aria-hidden="true"></i>
+                            </Link>
+                        }
+                        {pages > 1 && pages !== page &&
+                            <Link
+                                title="next_link"
+                                key="next"
+                                to={`/page/${page + 1}`}
+                            >
+                                <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                            </Link>
+                        }
+                        <p>{translate(lang, 'page_Name')} {page}</p>
                     </div>
                 </>
             )}
