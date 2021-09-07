@@ -60,7 +60,7 @@ orderRouter.get(
             'user',
             'name'
         );
-        res.send(orders);
+        res.set('Cache-Control', 'public, max-age=1').send(orders);
     })
 );
 
@@ -104,13 +104,13 @@ orderRouter.get(
                 },
             },
         ]);
-        res.send({ users, orders, dailyOrders, productCategories });
+        res.set('Cache-Control', 'public, max-age=1').send({ users, orders, dailyOrders, productCategories });
     })
 );
 
 orderRouter.get('/history', isAuth, expressAsyncHandler(async (req, res) => {
     const orders = await Order.find({ user: req.user._id });
-    res.send(orders);
+    res.set('Cache-Control', 'public, max-age=1').send(orders);
 }));
 
 orderRouter.post('/', isAuth, expressAsyncHandler(async (req, res) => {
@@ -144,7 +144,7 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async (req, res) => {
 orderRouter.get("/:id", isAuth, expressAsyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id);
     if (order) {
-        res.send(order);
+        res.set('Cache-Control', 'public, max-age=1').send(order);
     } else {
         res.status(404).send({ message: 3003 });
     }
