@@ -45,11 +45,12 @@ import userRouter from './routers/userRouter.js';
 import orderRouter from './routers/orderRouter.js';
 import uploadRouter from './routers/uploadRouter.js';
 import configRouter from './routers/configRouter.js';
+import helmet from 'helmet';
 
 dotenv.config();// json token secret
 const app = express();
 
-app.disable('x-powered-by');//safety?
+app.use(helmet());//safety?
 
 app.use(express.json());// parse post req for remove "" from obj and no error email
 app.use(express.urlencoded({ extended: true }));
