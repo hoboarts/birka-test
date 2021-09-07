@@ -101,7 +101,7 @@ productRouter.get(
       .sort(sortOrder)
       .skip(pageSize * (page - 1))
       .limit(pageSize);
-    res.set('Cache-Control', 'public, max-age=86400').send({ products, page, pages: Math.ceil(count / pageSize) });
+    res.set('Cache-Control', 'public, max-age=1').send({ products, page, pages: Math.ceil(count / pageSize) });
   })
 );
 

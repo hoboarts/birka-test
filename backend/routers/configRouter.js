@@ -43,7 +43,7 @@ const configRouter = express.Router();
 
 configRouter.get('/rate', expressAsyncHandler(async (req, res) => {
   const rate = await Config.find({ type: 'currencyRate' });
-  res.set('Cache-Control', 'public, max-age=2628000').send(rate);
+  res.set('Cache-Control', 'public, max-age=1').send(rate);
 }));
 
 configRouter.get('/paymer', expressAsyncHandler(async (req, res) => {
@@ -51,12 +51,12 @@ configRouter.get('/paymer', expressAsyncHandler(async (req, res) => {
     merchId: process.env.MERCH_ID,
     hostName: process.env.HOST_NAME,
   }
-  res.set('Cache-Control', 'public, max-age=2628000').send(data);
+  res.set('Cache-Control', 'public, max-age=1').send(data);
 }));
 
 configRouter.get('/phones', expressAsyncHandler(async (req, res) => {
   const phoneNumbers = await Config.find({ type: 'phoneNumbers' });
-  res.set('Cache-Control', 'public, max-age=2628000').send(phoneNumbers[0].strArr);
+  res.set('Cache-Control', 'public, max-age=1').send(phoneNumbers[0].strArr);
 }));
 
 configRouter.get('/', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
@@ -74,7 +74,7 @@ configRouter.get('/', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
     itemDecrementer: { value: itemDecrementer[0].value, useIt: itemDecrementer[0].useIt },
     phoneNumbers: { strArr: phoneNumbers[0].strArr },
   };
-  res.set('Cache-Control', 'public, max-age=2628000').send(setting);
+  res.set('Cache-Control', 'public, max-age=1').send(setting);
 }));
 
 configRouter.put('/update', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
