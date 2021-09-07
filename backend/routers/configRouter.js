@@ -45,7 +45,7 @@ configRouter.use(helmet.noSniff());
 
 configRouter.get('/rate', expressAsyncHandler(async (req, res) => {
   const rate = await Config.find({ type: 'currencyRate' });
-  res.send(rate);
+  res.set('Cache-Control', 'public, max-age=86400').send(rate);
 }));
 
 configRouter.get('/paymer', expressAsyncHandler(async (req, res) => {
