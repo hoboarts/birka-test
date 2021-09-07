@@ -199,7 +199,7 @@ export default function SearchScreen(props) {
                                 ))}
                             </div>
                             <div className="row center pagination">
-                                {[...Array(pages).keys()].map(x => (
+                                {/* [...Array(pages).keys()].map(x => (
                                     <Link
                                         className={x + 1 === page ? 'active' : ''}
                                         key={x + 1}
@@ -207,7 +207,26 @@ export default function SearchScreen(props) {
                                     >
                                         {x + 1}
                                     </Link>
-                                ))}
+                                )) */}
+                                {pages > 1 && page > 1 &&
+                                    <Link
+                                        title="back_link"
+                                        key="back"
+                                        to={getFilterUrl({ page: page - 1 })}
+                                    >
+                                        <i className="fa fa-arrow-left" aria-hidden="true"></i>
+                                    </Link>
+                                }
+                                {pages > 1 && pages !== page &&
+                                    <Link
+                                        title="next_link"
+                                        key="next"
+                                        to={getFilterUrl({ page: page + 1 })}
+                                    >
+                                        <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </Link>
+                                }
+                                <p>{translate(lang, 'page_Name')} {page}</p>
                             </div>
                         </>
                     )}
