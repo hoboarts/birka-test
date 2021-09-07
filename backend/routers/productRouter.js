@@ -109,7 +109,7 @@ productRouter.get(
   '/categories',
   expressAsyncHandler(async (req, res) => {
     const categories = await Product.find().distinct('category');
-    res.send(categories);
+    res.set('Cache-Control', 'public, max-age=1').send(categories);
   })
 );
 
@@ -122,7 +122,7 @@ productRouter.get(
 productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
-    res.send(product);
+    res.set('Cache-Control', 'public, max-age=1').send(product);
   } else {
     res.status(404).send({ message: 2001 });
   }
@@ -215,9 +215,7 @@ productRouter.post(
     const product = await Product.findById(productId);
     if (product) {
       if (product.reviews.find(x => x.name === req.user.name)) {
-        return res
-          .status(400)
-          .send({ message: 2005 });
+        return res.status(400).send({ message: 2005 });
       }
       const review = {
         name: req.user.name,
