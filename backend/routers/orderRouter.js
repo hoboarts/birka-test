@@ -187,7 +187,7 @@ orderRouter.put(
             order.deliveredAt = Date.now();
 
             const updatedOrder = await order.save();
-            res.send({ message: 3008, order: updatedOrder });
+            res.set('Cache-Control', 'public, max-age=1').send({ message: 3008, order: updatedOrder });
         } else {
             res.status(404).send({ message: 3003 });
         }
