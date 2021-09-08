@@ -56,6 +56,7 @@ export default function SearchScreen(props) {
         rating = 0,
         order = 'newest',
         pageNumber = 1,
+        pageSize = 5,
     } = useParams();
     const dispatch = useDispatch();
     const productList = useSelector(state => state.productList);
@@ -73,6 +74,7 @@ export default function SearchScreen(props) {
         dispatch(
             listProducts({
                 pageNumber,
+                pageSize,
                 name: name !== 'all' ? name : '',
                 category: category !== 'all' ? category : '',
                 min,
@@ -82,7 +84,7 @@ export default function SearchScreen(props) {
             })
         );
         return () => mounted = false;
-    }, [category, rate, dispatch, max, min, name, order, rating, pageNumber]);
+    }, [category, rate, dispatch, max, min, name, order, rating, pageNumber, pageSize]);
 
     const getFilterUrl = (filter) => {
         const filterPage = filter.page || pageNumber;
@@ -226,7 +228,7 @@ export default function SearchScreen(props) {
                                         <i className="fa fa-arrow-right" aria-hidden="true"></i>
                                     </Link>
                                 }
-                                <p>{translate(lang, 'page_Name')} {page}</p>
+                                <p>{translate(lang, 'page_Name')} {page} / {pages}</p>
                             </div>
                         </>
                     )}

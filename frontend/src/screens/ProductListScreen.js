@@ -45,7 +45,7 @@ import { translate } from '../localisation';
 
 export default function ProductListScreen(props) {
   const lang = useSelector(state => state.cart.localisation);
-  const { pageNumber = 1 } = useParams();
+  const { pageNumber = 1, pageSize = 20, } = useParams();
   const productList = useSelector(state => state.productList);
   const { loading, error, products, page, pages } = productList;
 
@@ -75,8 +75,10 @@ export default function ProductListScreen(props) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
     dispatch(
-      listProducts({ pageNumber })
-    );
+      listProducts({
+        pageNumber,
+        pageSize
+      }));
   }, [
     createdProduct,
     dispatch,
@@ -85,6 +87,7 @@ export default function ProductListScreen(props) {
     successDelete,
     userInfo._id,
     pageNumber,
+    pageSize
   ]);
 
   const deleteHandler = (product) => {
@@ -157,7 +160,7 @@ export default function ProductListScreen(props) {
             </tbody>
           </table>
           <div className="row center pagination">
-            {[...Array(pages).keys()].map((x) => (
+            {/* [...Array(pages).keys()].map((x) => (
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
@@ -165,7 +168,26 @@ export default function ProductListScreen(props) {
               >
                 {x + 1}
               </Link>
-            ))}
+            )) */}
+            {pages > 1 && page > 1 &&
+              <Link
+                title="back_link"
+                key="back"
+                to={`/page/${page - 1}`}
+              >
+                <i className="fa fa-arrow-left" aria-hidden="true"></i>
+              </Link>
+            }
+            {pages > 1 && pages !== page &&
+              <Link
+                title="next_link"
+                key="next"
+                to={`/page/${page + 1}`}
+              >
+                <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            }
+            <p>{translate(lang, 'page_Name')} {page} / {pages}</p>
           </div>
         </>
       )}

@@ -46,7 +46,7 @@ import { Link, useParams } from 'react-router-dom';
 
 export default function HomeScreen() {
     const lang = useSelector(state => state.cart.localisation);
-    const { pageNumber = 1 } = useParams();
+    const { pageNumber = 1, pageSize = 5, } = useParams();
     const [rate, setRate] = useState(0);
 
     const dispatch = useDispatch();
@@ -60,9 +60,12 @@ export default function HomeScreen() {
                 return setRate(res);
             }
         });
-        dispatch(listProducts({ pageNumber }));
+        dispatch(listProducts({
+            pageNumber,
+            pageSize
+        }));
         return () => mounted = false;
-    }, [dispatch, pageNumber]);
+    }, [dispatch, pageNumber, pageSize]);
     return (
         <div>
             {loading || rate === 0 ? (
@@ -105,7 +108,7 @@ export default function HomeScreen() {
                                 <i className="fa fa-arrow-right" aria-hidden="true"></i>
                             </Link>
                         }
-                        <p>{translate(lang, 'page_Name')} {page}</p>
+                        <p>{translate(lang, 'page_Name')} {page} / {pages}</p>
                     </div>
                 </>
             )}
