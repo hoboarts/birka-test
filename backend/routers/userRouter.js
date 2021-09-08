@@ -53,7 +53,7 @@ userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-            res.send({
+            res.set('Cache-Control', 'public, max-age=0').send({
                 _id: user._id,
                 name: user.name,
                 email: user.email,
@@ -63,7 +63,7 @@ userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
             return;
         }
     }
-    res.status(401).send({ message: 1001 });
+    res.set('Cache-Control', 'public, max-age=0').status(401).send({ message: 1001 });
 }));
 
 userRouter.post('/register', expressAsyncHandler(async (req, res) => {
@@ -77,7 +77,7 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
     const createdUser = await user.save();
     counter[0].value ++;
     await counter[0].save();
-    res.send({
+    res.set('Cache-Control', 'public, max-age=0').send({
         _id: createdUser._id,
         name: createdUser.name,
         email: createdUser.email,
@@ -89,9 +89,9 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
 userRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
-        res.send(user);
+        res.set('Cache-Control', 'public, max-age=0').send(user);
     } else {
-        res.status(404).send({ message: 1002 });
+        res.set('Cache-Control', 'public, max-age=0').status(404).send({ message: 1002 });
     }
 }));
 
@@ -104,7 +104,7 @@ userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
             user.password = bcrypt.hashSync(req.body.password, 8);
         }
         const updatedUser = await user.save();
-        res.send({
+        res.set('Cache-Control', 'public, max-age=0').send({
             _id: updatedUser._id,
             name: updatedUser.name,
             email: updatedUser.email,
@@ -120,7 +120,7 @@ userRouter.get(
     isAdmin,
     expressAsyncHandler(async (req, res) => {
         const users = await User.find({});
-        res.send(users);
+        res.set('Cache-Control', 'public, max-age=0').send(users);
     })
 );
 
@@ -132,13 +132,13 @@ userRouter.delete(
         const user = await User.findById(req.params.id);
         if (user) {
             if (user.email === 'admin@example.com') {
-                res.status(400).send({ message: 1003 });
+                res.set('Cache-Control', 'public, max-age=0').status(400).send({ message: 1003 });
                 return;
             }
             const deleteUser = await user.remove();
-            res.send({ message: 'User Deleted', user: deleteUser });
+            res.set('Cache-Control', 'public, max-age=0').send({ message: 'User Deleted', user: deleteUser });
         } else {
-            res.status(404).send({ message: 1002 });
+            res.set('Cache-Control', 'public, max-age=0').status(404).send({ message: 1002 });
         }
     })
 );
@@ -155,12 +155,12 @@ userRouter.put(
                 user.email = req.body.email || user.email;
                 user.isAdmin = Boolean(req.body.isAdmin);
                 const updatedUser = await user.save();
-                res.send({ message: 'User Updated', user: updatedUser });
+                res.set('Cache-Control', 'public, max-age=0').send({ message: 'User Updated', user: updatedUser });
             } else {
-                res.status(404).send({ message: 1002 });
+                res.set('Cache-Control', 'public, max-age=0').status(404).send({ message: 1002 });
             }
         } else {
-            res.status(404).send({ message: 1004 });
+            res.set('Cache-Control', 'public, max-age=0').status(404).send({ message: 1004 });
         }
     })
 );
