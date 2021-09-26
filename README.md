@@ -5,7 +5,7 @@ contact:   hoboart@zoho.com
 
 INSTRUCTION \
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
-that's mean rates loading from DB or public API LIVE currency exchange rates (Ukraine), \
+that's mean rates loading from DB or, at discretion, Privatbank public API LIVE currency exchange rates (Ukraine), \
 USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United States dollar). \
 Prices of total order cost in DB specified in UAH (Ukrainian hryvnia). \
 Changes of currency rate occurs in admin settings screen.
