@@ -131,7 +131,7 @@ export default function SettingScreen(props) {
     const handleAddPhone = () => {
         if (phoneNumbers.length < 3) {
             const temparr = [];
-            phoneNumbers.map(num => { temparr.push(num); return 0 });
+            phoneNumbers.length > 0 && phoneNumbers.map(num => { temparr.push(num); return 0 });
             temparr.push(addNumber);
             setPhoneNumbers(temparr);
             setAddNumber('');
