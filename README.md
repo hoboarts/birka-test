@@ -1,12 +1,7 @@
 # Birka eCommerce beta [Client: REACT + REDUX, Server: NODE.JS EXPRESS, DB: MongoDB]
 DEMO https://peaceful-brushlands-57795.herokuapp.com/
 
-HOBO-ART-STUDIO © \
-|  contact:   hoboart@zoho.com  |\
-|  itch.io:   https://hoboart.itch.io  |\
-|  youtube:   https://www.youtube.com/channel/UCJS-Ow6LOZRcrQ7VZ2_V0qA  |\
-|  art:   https://www.artstation.com/hidey0shi  |\
-|  SIMON ORLOV |
+contact:   hoboart@zoho.com
 
 INSTRUCTION \
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
@@ -15,11 +10,11 @@ USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United
 Prices of total order cost in DB specified in UAH (Ukrainian hryvnia). \
 Changes of currency rate occurs in admin settings screen.
 
-!Beware the changing of products|orders|users ID's counterr! \
+!Beware the changing of products|orders|users ID's counter! \
 Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 
 Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased
-automatically at the end of the day or even earlier.
+automatically at the end of the day or even earlier. Need to implement AWS S3.
 
 Test user: \
 email: testuser@example.com \
@@ -39,10 +34,10 @@ secret code: any
 
 App has support: \
 Localization in russian, ukranian, english languages. \
-Registration & authentication of users, admin privileges. \
+Registration & authentication of users with JWT, admin privileges. \
 Ordered product management for users. \
 Product reviews & rating. \
-Customized paybutton of *_NOT_FOR_AD_NAME_* bank (Ukraine) visa/master card payment. \
+Customized paybutton of Tascombank API (Ukraine) visa/master card payment. \
 Dashboard on Google Chart. \
 Products/Orders/User management in admin settings screen. \
 Orders payment & delivery management in admin settings screen. \
@@ -53,7 +48,7 @@ Product decrement auto/manual switch, after purchase. \
 Chat support admin-to-consumers messaging.
 
 Known issues and planned updates:
-- Infinitely loading of paybutton (press update button in your browser). \
-Pending script loading from old PHP server of *_NOT_FOR_AD_NAME_* bank (Ukraine).
+- Infinitely loading of paybutton (try refresh (CTRL+R) button in your browser). \
+Pending loading of script from Tascombank API (Ukraine).
 - Adding file management for image files with storage on AWS S3.
 - Landing page, elaboration of visual appearance of the app.
