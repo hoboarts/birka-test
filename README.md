@@ -39,7 +39,7 @@ Admin: \
 email: `testadmin@example.com` \
 password: `test01`
 
-You can easily register new account, now it work without any confirmation email or captcha.
+You can easily register a new account, now it work without any confirmation email or captcha.
 
 #
 
