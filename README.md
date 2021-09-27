@@ -27,7 +27,7 @@ automatically at the end of the day or even earlier. Need to implement AWS S3.
 
 #
 
-TEST SING-IN \
+TEST SING-IN 
 
 #
 
