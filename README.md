@@ -25,15 +25,23 @@ Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased
 automatically at the end of the day or even earlier. Need to implement AWS S3.
 
-Test login user: \
+#
+
+TEST SING-IN \
+
+#
+
+User: \
 email: `testuser@example.com` \
 password: `test01`
 
-Test admin: \
+Admin: \
 email: `testadmin@example.com` \
 password: `test01`
 
 You can easily register new account, now it work without any confirmation email or captcha.
+
+#
 
 Payment working now in test mode. \
 Test payment card: `4444 5555 6666 1111` \
