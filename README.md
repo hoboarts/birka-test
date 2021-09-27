@@ -7,7 +7,12 @@
 
 contact:   hoboart@zoho.com
 
-INSTRUCTION \
+#
+
+INSTRUCTION
+
+#
+
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
 that's mean rates loading from DB or, at discretion, Privatbank public API LIVE currency exchange rates (Ukraine), \
 USD -> UAH = RATE * PRICE. All prices of products in DB specified in USD (United States dollar). \
@@ -20,21 +25,20 @@ Server will thrown error if detect the same ID ( ID 12 -> ID 12 = ERROR).
 Storing of product's images is temporary on herokuapp.com. If you upload new jpgs, it will be erased
 automatically at the end of the day or even earlier. Need to implement AWS S3.
 
-Test user: \
-email: testuser@example.com \
-password: test01
+Test login user: \
+email: `testuser@example.com` \
+password: `test01`
 
 Test admin: \
-email: testadmin@example.com \
-password: test01
+email: `testadmin@example.com` \
+password: `test01`
 
 You can easily register new account, now it work without any confirmation email or captcha.
 
 Payment working now in test mode. \
-Test payment card: \
-4444 5555 6666 1111 \
-exp.date: any \
-secret code: any
+Test payment card: `4444 5555 6666 1111` \
+exp.date: `any` \
+secret code: `any`
 
 App has support: \
 Localization in russian, ukranian, english languages. \
