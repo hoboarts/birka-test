@@ -12,6 +12,12 @@ contact:   hoboart@zoho.com
 INSTRUCTION
 
 #
+START CLIENT : \
+`cd frontend` \
+`npm start`
+
+START SERVER : \
+`npm start`
 
 ECommerce app targeted on ukrainian market. All prices in app uses the rate currency exchange system, \
 that's mean rates loading from DB or, at discretion, Privatbank public API LIVE currency exchange rates (Ukraine), \
