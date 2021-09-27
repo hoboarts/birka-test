@@ -1,5 +1,4 @@
 # Birka eCommerce beta [Client: REACT + REDUX, Server: NODE.JS EXPRESS, DB: MongoDB]
-DEMO https://peaceful-brushlands-57795.herokuapp.com/
 #
 
 ###  [DEMO Birka ECommerce](https://peaceful-brushlands-57795.herokuapp.com/)
