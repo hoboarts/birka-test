@@ -86,7 +86,7 @@ KEY_PASS=...
 ```
 
 Known issues and planned updates:
-- Infinitely loading of paybutton (try refresh (CTRL+R) button in your browser). \
+- Infinitely loading of paybutton (try refresh `CTRL+R` button in your browser). \
 Pending loading of script from Tascombank API (Ukraine).
 - Adding file management for image files with storage on AWS S3.
 - Landing page, elaboration of visual appearance of the app.
