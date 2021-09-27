@@ -1,4 +1,4 @@
-# Birka eCommerce beta [Client: REACT + REDUX, Server: NODE.JS EXPRESS, DB: MongoDB]
+# Birka eCommerce beta [Client: REACT + REDUX, Server: NODE.JS + EXPRESS, DB: MongoDB NoSQL]
 #
 
 ###  [DEMO Birka ECommerce](https://peaceful-brushlands-57795.herokuapp.com/)
@@ -61,7 +61,7 @@ Adding up to 3 mobile numbers on header of home screen. \
 Specifying product on discount. \
 Uploading up to 3 images for product on server. \
 Product decrement auto/manual switch, after purchase. \
-Chat support admin-to-consumers messaging.
+Chat support admin-to-consumers messaging with Socket.IO WebSocket.
 
 Setup your environment by setting the following variables in a .env file:
 ```
