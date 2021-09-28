@@ -56,9 +56,10 @@ export default function ChatBox(props) {
       setTimeout(() => {
         socket.emit('onMessage', {
           body: messageBody,
+          _id: userInfo._id,
           name: userInfo.name,
           isAdmin: userInfo.isAdmin,
-          _id: userInfo._id,
+          loca: lang,
         });
       }, 1000);
     }

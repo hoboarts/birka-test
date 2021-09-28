@@ -111,8 +111,12 @@ io.on('connection', (socket) => {
         user.messages.push(message);
       } else {
         io.to(socket.id).emit('message', {
-          name: 'Admin',
-          body: 'Sorry. I am not online right now',
+          name: message.loca === "RU" ? "Вероника"
+          : message.loca === "UA" ? "Аліна"
+          : "Mary",
+          body: message.loca === "RU" ? "Извините. Я сейчас не в сети"
+          : message.loca === "UA" ? "Вибачте. Я зараз не в мережі "
+          : "Sorry. I am not online right now",
         });
       }
     }
