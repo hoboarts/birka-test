@@ -39,13 +39,10 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 );
 
-/* app.get("/", (req, res) => {
-    res.send("Server is ready");
-}); */
-
 app.use((err, req, res, next) => {
     res.status(500).send({ message: err.message });
 });
+
 const port = process.env.PORT || 5000;
 
 const httpServer = http.Server(app);
@@ -123,5 +120,5 @@ io.on('connection', (socket) => {
 });
 
 httpServer.listen(port, () => {
-  console.log(`Serve at http://localhost:${port}`);
+  console.log(`Server running in ${process.env.NODE_ENV} on port ${port}`)
 });
