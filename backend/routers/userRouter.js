@@ -83,7 +83,7 @@ userRouter.get(
     isAuth,
     isAdmin,
     expressAsyncHandler(async (req, res) => {
-        const users = await User.find({});
+        const users = await User.find({}).sort({'userID':1});
         res.set('Cache-Control', 'public, max-age=0').send(users);
     })
 );

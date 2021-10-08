@@ -68,7 +68,7 @@ export default function UserListScreen(props) {
                                     >
                                         {translate(lang, 'edit_Name')}
                                     </button>
-                                    {user.userID !== 'ADMIN' &&
+                                    {user.userID !== '1' &&
                                         <button
                                             type="button"
                                             className="small"
